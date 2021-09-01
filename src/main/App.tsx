@@ -2,8 +2,12 @@ import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import React, { useState } from "react";
 import Banner from "./Banner";
 import Loading from "./Loading";
+import Navbar from "./Navbar";
 
 export interface AppProps {}
+
+const bannerImg =
+  "https://images.pexels.com/photos/163143/sackcloth-sackcloth-textured-laptop-ipad-163143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 export default function App({}: AppProps) {
   const [loading, setLoading] = useState(true);
@@ -13,16 +17,17 @@ export default function App({}: AppProps) {
       <AnimatePresence>
         {loading ? (
           <motion.div key="loader">
-            <Loading setLoading={setLoading} />
+            <Loading setLoading={setLoading} bannerImg={bannerImg} />
           </motion.div>
         ) : (
           <>
+            <Navbar />
             <Banner />
             {!loading && (
               <div className="transition-image final">
                 <motion.img
                   transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                  src={`https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-johannes-plenio-1103970.jpg&fm=jpg`}
+                  src={bannerImg}
                   layoutId="main-image-1"
                 />
               </div>

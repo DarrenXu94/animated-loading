@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 export interface LoadingProps {
   setLoading;
+  bannerImg;
 }
 
 const itemMain = {
@@ -45,7 +46,7 @@ const item = {
   },
 };
 
-export default function Loading({ setLoading }: LoadingProps) {
+export default function Loading({ setLoading, bannerImg }: LoadingProps) {
   return (
     <motion.div className="loader">
       <motion.div
@@ -57,10 +58,7 @@ export default function Loading({ setLoading }: LoadingProps) {
         className="loader-inner"
       >
         <motion.div variants={itemMain} className="transition-image">
-          <motion.img
-            layoutId="main-image-1"
-            src={`https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-johannes-plenio-1103970.jpg&fm=jpg`}
-          />
+          <motion.img layoutId="main-image-1" src={bannerImg} />
           <motion.div variants={item} className="welcomeBlock">
             <h1>Welcome</h1>
           </motion.div>
