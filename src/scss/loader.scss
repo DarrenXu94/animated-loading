@@ -1,0 +1,16 @@
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.welcomeBlock {
+  position: absolute;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   width: 400px;
+  //   left: 45%;
+  top: 15%;
+  font-size: 4rem;
+}
