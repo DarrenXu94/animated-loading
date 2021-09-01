@@ -1,0 +1,88 @@
+.project-container {
+  display: flex;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    font-size: 3rem;
+    color: #fff;
+  }
+  &-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 1em;
+    position: relative;
+  }
+}
+
+.selected-project-card {
+  border-radius: 1.2rem;
+  opacity: 1;
+  transform-origin: 50% 50% 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  background: #fff;
+  border: 1px solid black;
+
+  transform-origin: 50% 50% 0px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+.project-card {
+  border-radius: 0.6rem;
+  transform-origin: 50% 50% 0px;
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1),
+    0 10px
+      min(
+        calc(
+          1rem *
+            (
+              15 /
+                (
+                  var(--system-dimension-fontSizeDynamic) + 0.167 *
+                    var(--system-dimension-fontSizeDifference)
+                )
+            )
+        ),
+        15px
+      )
+      0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1),
+    0 10px
+      min(
+        calc(
+          1rem *
+            (
+              15 /
+                (
+                  var(--system-dimension-fontSizeDynamic) + 0.167 *
+                    var(--system-dimension-fontSizeDifference)
+                )
+            )
+        ),
+        15px
+      )
+      0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
