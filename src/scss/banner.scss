@@ -71,11 +71,12 @@
   }
   &.final {
     display: block;
-    top: -128px;
+    // top: -128px;
     position: relative;
     width: 100%;
     margin: 0 auto;
     z-index: -100;
+    height: unset;
     @media (max-width: 768px) {
       top: -56px;
     }
