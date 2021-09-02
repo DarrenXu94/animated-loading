@@ -36,8 +36,6 @@ const container = {
 };
 
 export default function Projects({}: ProjectsProps) {
-  const [selectedId, setSelectedId] = useState<any>(null);
-
   return (
     <motion.div
       className="project-container"
@@ -49,44 +47,6 @@ export default function Projects({}: ProjectsProps) {
     >
       <motion.div variants={itemMain} className="content">
         <h2 className="content__h2">Projects</h2>
-        <div className="content-card-container">
-          <AnimateSharedLayout type="crossfade">
-            {items.map((item) => (
-              <motion.div
-                layoutId={item.id}
-                className="project-card"
-                onClick={() => setSelectedId(item)}
-              >
-                <motion.h2 className="project-card__h2">{item.title}</motion.h2>
-                <motion.h5 className="project-card__h5">
-                  {item.subtitle}
-                </motion.h5>
-              </motion.div>
-            ))}
-
-            <AnimatePresence>
-              {selectedId && (
-                <motion.div
-                  className="selected-project-card"
-                  layoutId={selectedId.id}
-                >
-                  <motion.h2 className="selected-project-card__h2">
-                    {selectedId.title}
-                  </motion.h2>
-                  <motion.h5 className="selected-project-card__h5">
-                    {selectedId.subtitle}
-                  </motion.h5>
-                  <motion.button
-                    className="selected-project-card-close"
-                    onClick={() => setSelectedId(null)}
-                  >
-                    X
-                  </motion.button>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </AnimateSharedLayout>
-        </div>
       </motion.div>
     </motion.div>
   );
