@@ -4,8 +4,14 @@ import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 export interface ProjectsProps {}
 
 const items = [
-  { id: "1", subtitle: "Test", title: "Test" },
+  {
+    id: "1",
+    subtitle:
+      "Hear about my latest hard hitting choccy reviews. A Gatsby blog hosted on Netlify with custom React components and styling",
+    title: "Choccy Blog",
+  },
   { id: "2", subtitle: "Test 2", title: "Test 2" },
+  { id: "3", subtitle: "Test 3", title: "Test 3" },
 ];
 
 const itemMain = {
@@ -42,7 +48,7 @@ export default function Projects({}: ProjectsProps) {
       variants={container}
     >
       <motion.div variants={itemMain} className="content">
-        <h2>Projects</h2>
+        <h2 className="content__h2">Projects</h2>
         <div className="content-card-container">
           <AnimateSharedLayout type="crossfade">
             {items.map((item) => (
@@ -51,8 +57,10 @@ export default function Projects({}: ProjectsProps) {
                 className="project-card"
                 onClick={() => setSelectedId(item)}
               >
-                <motion.h5>{item.subtitle}</motion.h5>
-                <motion.h2>{item.title}</motion.h2>
+                <motion.h2 className="project-card__h2">{item.title}</motion.h2>
+                <motion.h5 className="project-card__h5">
+                  {item.subtitle}
+                </motion.h5>
               </motion.div>
             ))}
 
@@ -60,11 +68,18 @@ export default function Projects({}: ProjectsProps) {
               {selectedId && (
                 <motion.div
                   className="selected-project-card"
-                  layoutId={selectedId}
+                  layoutId={selectedId.id}
                 >
-                  <motion.h5>{selectedId.subtitle}</motion.h5>
-                  <motion.h2>{selectedId.title}</motion.h2>
-                  <motion.button onClick={() => setSelectedId(null)}>
+                  <motion.h2 className="selected-project-card__h2">
+                    {selectedId.title}
+                  </motion.h2>
+                  <motion.h5 className="selected-project-card__h5">
+                    {selectedId.subtitle}
+                  </motion.h5>
+                  <motion.button
+                    className="selected-project-card-close"
+                    onClick={() => setSelectedId(null)}
+                  >
                     X
                   </motion.button>
                 </motion.div>
