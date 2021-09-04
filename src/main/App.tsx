@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Banner from "./Banner";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
-import Experience from "./Sections/Experience";
-import ExperienceList from "./Sections/ExperienceList";
+import Experience from "./Sections/Experience/Experience";
+import ExperienceList from "./Sections/Experience/ExperienceList";
 
 export interface AppProps {}
 

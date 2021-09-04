@@ -7,6 +7,17 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-column-gap: 50px;
+    &:nth-child(even) {
+      direction: rtl;
+    }
+
+    &:first-child {
+      padding-top: 20rem;
+    }
+
+    &:not(:first-child) {
+      padding-top: 30rem;
+    }
 
     &__img img {
       object-fit: cover;
