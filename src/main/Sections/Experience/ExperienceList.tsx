@@ -1,4 +1,5 @@
 import React from "react";
+import FadeInWhenVisible from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisible";
 
 export interface ExperienceListProps {}
 
@@ -31,7 +32,8 @@ export default function ExperienceList({}: ExperienceListProps) {
     <div className="experienceList">
       {experienceListItems.map((item) => {
         return (
-          <div className="experienceList--item">
+          <FadeInWhenVisible key={item.name} className="experienceList--item">
+            {/* <div > */}
             <div className="experienceList--item__img">
               <img src={item.img} alt="" />
             </div>
@@ -43,7 +45,8 @@ export default function ExperienceList({}: ExperienceListProps) {
               </div>
               <p>{item.description}</p>
             </div>
-          </div>
+            {/* </div> */}
+          </FadeInWhenVisible>
         );
       })}
     </div>
