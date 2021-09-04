@@ -51,7 +51,7 @@ export default function Banner({}: BannerProps) {
           Home
         </motion.div>
         <motion.div variants={itemMain} className="banner-menu-item">
-          Projects
+          Experience
         </motion.div>
       </motion.div>
       <div className="circle">

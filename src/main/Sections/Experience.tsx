@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import ExperienceList from "./ExperienceList";
 
-export interface ProjectsProps {}
+export interface ExperienceProps {}
 
 const items = [
   {
@@ -35,7 +36,7 @@ const container = {
   },
 };
 
-export default function Projects({}: ProjectsProps) {
+export default function Experience({}: ExperienceProps) {
   return (
     <motion.div
       className="project-container"
@@ -46,7 +47,7 @@ export default function Projects({}: ProjectsProps) {
       variants={container}
     >
       <motion.div variants={itemMain} className="content">
-        <h2 className="content__h2">Projects</h2>
+        <h2 className="content__h2">Experience</h2>
       </motion.div>
     </motion.div>
   );

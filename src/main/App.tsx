@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Banner from "./Banner";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
-import Projects from "./Projects";
+import Experience from "./Sections/Experience";
+import ExperienceList from "./Sections/ExperienceList";
 
 export interface AppProps {}
 
@@ -25,17 +26,20 @@ export default function App({}: AppProps) {
             <Navbar />
             <Banner />
             {!loading && (
-              <div className="transition-image final">
-                <Projects />
-                <motion.img
-                  transition={{
-                    ease: [0.6, 0.01, -0.05, 0.9],
-                    duration: 1.6,
-                  }}
-                  src={bannerImg}
-                  layoutId="main-image-1"
-                />
-              </div>
+              <>
+                <div className="transition-image final">
+                  <Experience />
+                  <motion.img
+                    transition={{
+                      ease: [0.6, 0.01, -0.05, 0.9],
+                      duration: 1.6,
+                    }}
+                    src={bannerImg}
+                    layoutId="main-image-1"
+                  />
+                </div>
+                <ExperienceList />
+              </>
             )}
           </>
         )}

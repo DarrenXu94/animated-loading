@@ -1,0 +1,36 @@
+.experienceList {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 10rem;
+  &--item {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 50px;
+
+    &__img img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__content {
+      h3 {
+        font-size: 4rem;
+        padding: 20px 0px;
+      }
+      h5 {
+        font-size: 3rem;
+        padding: 10px 30px;
+      }
+    }
+    &__lineContainer {
+      display: flex;
+      align-items: center;
+      &--line {
+        width: 90%;
+        height: 3px;
+        background-color: black;
+      }
+    }
+  }
+}
