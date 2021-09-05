@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import React from "react";
-import FadeInWhenVisible from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisible";
+import FadeInWhenVisibleContainer from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisibleContainer";
+import FadeInWhenVisibleElement from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisibleElement";
 import useWindowSize, { Size } from "~/main/common/hooks/useWindowSize";
 
 export interface ExperienceListProps {}
@@ -37,35 +37,17 @@ export default function ExperienceList({}: ExperienceListProps) {
       {size.width &&
         experienceListItems.map((item, idx) => {
           return (
-            <FadeInWhenVisible
+            <FadeInWhenVisibleContainer
               key={item.name}
               className="experienceList--item"
               size={size}
             >
-              <motion.div
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.5 },
-                  },
-                  hidden: { opacity: 0, x: -200 },
-                }}
-              >
+              <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
                 <div className="experienceList--item__img">
                   <img src={item.img} alt="" />
                 </div>
-              </motion.div>
-              <motion.div
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.5 },
-                  },
-                  hidden: { opacity: 0, x: -200 },
-                }}
-              >
+              </FadeInWhenVisibleElement>
+              <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
                 <div className="experienceList--item__content">
                   <h3>{item.name}</h3>
                   <div className="experienceList--item__lineContainer">
@@ -74,8 +56,8 @@ export default function ExperienceList({}: ExperienceListProps) {
                   </div>
                   <p>{item.description}</p>
                 </div>
-              </motion.div>
-            </FadeInWhenVisible>
+              </FadeInWhenVisibleElement>
+            </FadeInWhenVisibleContainer>
           );
         })}
     </div>

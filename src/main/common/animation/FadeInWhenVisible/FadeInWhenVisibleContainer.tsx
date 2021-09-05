@@ -1,17 +1,17 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-export interface FadeInWhenVisibleProps {
+export interface FadeInWhenVisibleContainerProps {
   children;
   className?;
   size;
 }
 
-export default function FadeInWhenVisible({
+export default function FadeInWhenVisibleContainer({
   children,
   className,
   size,
-}: FadeInWhenVisibleProps) {
+}: FadeInWhenVisibleContainerProps) {
   const controls = useAnimation();
 
   const [ref, inView] = useInView(
@@ -41,10 +41,6 @@ export default function FadeInWhenVisible({
         delay: 0.2,
         staggerChildren: 0.35,
       }}
-      // variants={{
-      //   visible: { opacity: 1, x: 0 },
-      //   hidden: { opacity: 0, x: -200 },
-      // }}
     >
       {children}
     </motion.div>
