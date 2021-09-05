@@ -7,16 +7,25 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-column-gap: 50px;
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
     &:nth-child(even) {
       direction: rtl;
     }
 
     &:first-child {
-      margin-top: 20rem;
+      padding-top: 20rem;
+      @media (max-width: 992px) {
+        padding-top: 5rem;
+      }
     }
 
     &:not(:first-child) {
       padding-top: 30rem;
+      @media (max-width: 992px) {
+        padding-top: 10rem;
+      }
     }
 
     &__img img {

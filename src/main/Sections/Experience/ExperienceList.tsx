@@ -30,7 +30,7 @@ const experienceListItems = [
 export default function ExperienceList({}: ExperienceListProps) {
   return (
     <div className="experienceList">
-      {experienceListItems.map((item) => {
+      {experienceListItems.map((item, idx) => {
         return (
           <FadeInWhenVisible key={item.name} className="experienceList--item">
             {/* <div > */}
