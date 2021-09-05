@@ -1,28 +1,34 @@
+import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import useWindowSize, { Size } from "../../hooks/useWindowSize";
 export interface FadeInWhenVisibleProps {
   children;
   className?;
+  size;
 }
 
 export default function FadeInWhenVisible({
   children,
   className,
+  size,
 }: FadeInWhenVisibleProps) {
   const controls = useAnimation();
-  const size: Size = useWindowSize();
-  const [ref, inView] = useInView({
-    threshold: size.width ? (size.width > 960 && 0.5) || undefined : undefined,
-  });
+
+  const [ref, inView] = useInView(
+    size.width && size.width > 960
+      ? {
+          threshold: 0.5 || undefined,
+        }
+      : {
+          rootMargin: "-200px 0px",
+        }
+  );
 
   useEffect(() => {
-    console.log("IN view", { inView });
-    if (inView) {
+    if (inView && size.width) {
       controls.start("visible");
     }
-  }, [controls, inView]);
+  }, [controls, inView, size]);
 
   return (
     <motion.div

@@ -15,9 +15,9 @@
     }
 
     &:first-child {
-      padding-top: 20rem;
+      margin-top: 20rem;
       @media (max-width: 992px) {
-        padding-top: 5rem;
+        margin-top: 5rem;
       }
     }
 

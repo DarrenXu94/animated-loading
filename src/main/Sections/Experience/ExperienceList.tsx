@@ -1,5 +1,6 @@
 import React from "react";
 import FadeInWhenVisible from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisible";
+import useWindowSize, { Size } from "~/main/common/hooks/useWindowSize";
 
 export interface ExperienceListProps {}
 
@@ -28,27 +29,34 @@ const experienceListItems = [
 ];
 
 export default function ExperienceList({}: ExperienceListProps) {
+  const size: Size = useWindowSize();
+
   return (
     <div className="experienceList">
-      {experienceListItems.map((item, idx) => {
-        return (
-          <FadeInWhenVisible key={item.name} className="experienceList--item">
-            {/* <div > */}
-            <div className="experienceList--item__img">
-              <img src={item.img} alt="" />
-            </div>
-            <div className="experienceList--item__content">
-              <h3>{item.name}</h3>
-              <div className="experienceList--item__lineContainer">
-                <div className="experienceList--item__lineContainer--line"></div>
-                <h5>{item.role}</h5>
+      {size.width &&
+        experienceListItems.map((item, idx) => {
+          return (
+            <FadeInWhenVisible
+              key={item.name}
+              className="experienceList--item"
+              size={size}
+            >
+              {/* <div > */}
+              <div className="experienceList--item__img">
+                <img src={item.img} alt="" />
               </div>
-              <p>{item.description}</p>
-            </div>
-            {/* </div> */}
-          </FadeInWhenVisible>
-        );
-      })}
+              <div className="experienceList--item__content">
+                <h3>{item.name}</h3>
+                <div className="experienceList--item__lineContainer">
+                  <div className="experienceList--item__lineContainer--line"></div>
+                  <h5>{item.role}</h5>
+                </div>
+                <p>{item.description}</p>
+              </div>
+              {/* </div> */}
+            </FadeInWhenVisible>
+          );
+        })}
     </div>
   );
 }
