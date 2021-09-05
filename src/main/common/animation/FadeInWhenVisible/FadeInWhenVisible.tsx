@@ -36,11 +36,15 @@ export default function FadeInWhenVisible({
       className={className}
       animate={controls}
       initial="hidden"
-      transition={{ duration: 0.5, delay: 0.6 }}
-      variants={{
-        visible: { opacity: 1, x: 0 },
-        hidden: { opacity: 0, x: -200 },
+      transition={{
+        duration: 1.5,
+        delay: 0.2,
+        staggerChildren: 0.35,
       }}
+      // variants={{
+      //   visible: { opacity: 1, x: 0 },
+      //   hidden: { opacity: 0, x: -200 },
+      // }}
     >
       {children}
     </motion.div>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import FadeInWhenVisible from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisible";
 import useWindowSize, { Size } from "~/main/common/hooks/useWindowSize";
@@ -41,19 +42,39 @@ export default function ExperienceList({}: ExperienceListProps) {
               className="experienceList--item"
               size={size}
             >
-              {/* <div > */}
-              <div className="experienceList--item__img">
-                <img src={item.img} alt="" />
-              </div>
-              <div className="experienceList--item__content">
-                <h3>{item.name}</h3>
-                <div className="experienceList--item__lineContainer">
-                  <div className="experienceList--item__lineContainer--line"></div>
-                  <h5>{item.role}</h5>
+              <motion.div
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5 },
+                  },
+                  hidden: { opacity: 0, x: -200 },
+                }}
+              >
+                <div className="experienceList--item__img">
+                  <img src={item.img} alt="" />
                 </div>
-                <p>{item.description}</p>
-              </div>
-              {/* </div> */}
+              </motion.div>
+              <motion.div
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5 },
+                  },
+                  hidden: { opacity: 0, x: -200 },
+                }}
+              >
+                <div className="experienceList--item__content">
+                  <h3>{item.name}</h3>
+                  <div className="experienceList--item__lineContainer">
+                    <div className="experienceList--item__lineContainer--line"></div>
+                    <h5>{item.role}</h5>
+                  </div>
+                  <p>{item.description}</p>
+                </div>
+              </motion.div>
             </FadeInWhenVisible>
           );
         })}
