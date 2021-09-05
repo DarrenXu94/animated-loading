@@ -30,7 +30,7 @@ export default function FadeInWhenVisible({
       className={className}
       animate={controls}
       initial="hidden"
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
       variants={{
         visible: { opacity: 1, x: 0 },
         hidden: { opacity: 0, x: -200 },
