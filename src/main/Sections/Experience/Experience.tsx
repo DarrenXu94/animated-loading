@@ -35,7 +35,6 @@ const container = {
     },
   },
 };
-
 export default function Experience({}: ExperienceProps) {
   return (
     <motion.div
