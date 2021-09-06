@@ -16,9 +16,9 @@ export default function FadeInWhenVisibleElement({
         visible: {
           opacity: 1,
           x: 0,
-          transition: { duration: 0.5 },
+          transition: { duration: 0.85 },
         },
-        hidden: { opacity: 0, x: direction == "ltr" ? -200 : 200 },
+        hidden: { opacity: 0, x: direction == "ltr" ? -300 : 300 },
       }}
     >
       {children}

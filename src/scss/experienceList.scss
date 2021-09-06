@@ -3,6 +3,9 @@
   max-width: 1200px;
   margin: auto;
   margin-top: 10rem;
+  @media (max-width: 992px) {
+    width: 90%;
+  }
   &--item {
     display: grid;
     grid-template-columns: 50% 50%;

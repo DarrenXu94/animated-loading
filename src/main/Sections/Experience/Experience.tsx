@@ -47,7 +47,9 @@ export default function Experience({}: ExperienceProps) {
       variants={container}
     >
       <motion.div variants={itemMain} className="content">
-        <h2 className="content__h2">Experience</h2>
+        <h2 className="content__h2" id="experience">
+          Experience
+        </h2>
       </motion.div>
     </motion.div>
   );

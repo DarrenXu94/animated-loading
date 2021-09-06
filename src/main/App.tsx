@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import Navbar from "./Navbar";
 import Experience from "./Sections/Experience/Experience";
 import ExperienceList from "./Sections/Experience/ExperienceList";
+import Projects from "./Sections/Projects/Projects";
 
 export interface AppProps {}
 
@@ -39,6 +40,7 @@ export default function App({}: AppProps) {
                   />
                 </div>
                 <ExperienceList />
+                <Projects />
               </>
             )}
           </>
