@@ -1,7 +1,7 @@
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import React, { useState } from "react";
 import Banner from "./Banner";
-import FloatingActionButton from "./common/components/FloatingActionButton/floatingActionButton";
+import FloatingActionButton from "./common/components/FloatingActionButton/FloatingActionButton";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
 import Experience from "./Sections/Experience/Experience";

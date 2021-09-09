@@ -24,11 +24,11 @@ export default function FloatingActionButton({}: FloatingActionButtonProps) {
               exit="exit"
               className="floatingMenu"
             >
-              <motion.li key="1" variants={item}>
-                <a href="#">Add Supplier</a>
+              <motion.li key="home" variants={item}>
+                <a href="#">Home</a>
               </motion.li>
-              <motion.li key="2" variants={item}>
-                <a href="#">Add Supplier</a>
+              <motion.li key="experience" variants={item}>
+                <a href="#">Experiences</a>
               </motion.li>
             </motion.ul>
           )}
