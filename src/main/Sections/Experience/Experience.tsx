@@ -38,7 +38,7 @@ const container = {
 export default function Experience({}: ExperienceProps) {
   return (
     <motion.div
-      className="project-container"
+      className="experience-container"
       key="content"
       initial="hidden"
       animate="show"
