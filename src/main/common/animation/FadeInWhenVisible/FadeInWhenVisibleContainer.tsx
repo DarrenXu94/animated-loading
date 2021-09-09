@@ -1,18 +1,18 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import useWindowSize, { Size } from "../../hooks/useWindowSize";
 export interface FadeInWhenVisibleContainerProps {
   children;
   className?;
-  size;
 }
 
 export default function FadeInWhenVisibleContainer({
   children,
   className,
-  size,
 }: FadeInWhenVisibleContainerProps) {
   const controls = useAnimation();
+  const size: Size = useWindowSize();
 
   const [ref, inView] = useInView(
     size.width && size.width > 960

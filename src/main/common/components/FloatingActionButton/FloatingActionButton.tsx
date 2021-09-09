@@ -5,9 +5,20 @@ export interface FloatingActionButtonProps {}
 
 export default function FloatingActionButton({}: FloatingActionButtonProps) {
   const [isOpen, setisOpen] = useState(false);
+  const scrollTo = (title) => {
+    var url = location.href; //Save down the URL without hash.
+    location.href = "#" + title; //Go to the target element.
+    history.replaceState(null, "", url);
+  };
   return (
     <div className="floatingButtonWrap">
-      <div className="floatingButtonInner" onClick={() => setisOpen(!isOpen)}>
+      <div
+        className="floatingButtonInner"
+        onClick={(e) => {
+          e.preventDefault();
+          setisOpen(!isOpen);
+        }}
+      >
         <a href="#" className="floatingButton">
           +
         </a>
@@ -27,8 +38,26 @@ export default function FloatingActionButton({}: FloatingActionButtonProps) {
               <motion.li key="home" variants={item}>
                 <a href="#">Home</a>
               </motion.li>
+
               <motion.li key="experience" variants={item}>
-                <a href="#">Experiences</a>
+                <a
+                  href="#experience"
+                  onClick={() => {
+                    scrollTo("experience");
+                  }}
+                >
+                  Experience
+                </a>
+              </motion.li>
+              <motion.li key="projects" variants={item}>
+                <a
+                  onClick={() => {
+                    scrollTo("projects");
+                  }}
+                  href="#projects"
+                >
+                  Projects
+                </a>
               </motion.li>
             </motion.ul>
           )}

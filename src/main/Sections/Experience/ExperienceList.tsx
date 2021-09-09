@@ -30,36 +30,32 @@ const experienceListItems = [
 ];
 
 export default function ExperienceList({}: ExperienceListProps) {
-  const size: Size = useWindowSize();
-
   return (
     <div className="experienceList">
-      {size.width &&
-        experienceListItems.map((item, idx) => {
-          return (
-            <FadeInWhenVisibleContainer
-              key={item.name}
-              className="experienceList--item"
-              size={size}
-            >
-              <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
-                <div className="experienceList--item__img">
-                  <img src={item.img} alt="" />
+      {experienceListItems.map((item, idx) => {
+        return (
+          <FadeInWhenVisibleContainer
+            key={item.name}
+            className="experienceList--item"
+          >
+            <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
+              <div className="experienceList--item__img">
+                <img src={item.img} alt="" />
+              </div>
+            </FadeInWhenVisibleElement>
+            <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
+              <div className="experienceList--item__content">
+                <h3>{item.name}</h3>
+                <div className="experienceList--item__lineContainer">
+                  <div className="experienceList--item__lineContainer--line"></div>
+                  <h5>{item.role}</h5>
                 </div>
-              </FadeInWhenVisibleElement>
-              <FadeInWhenVisibleElement direction={idx % 2 ? "rtl" : "ltr"}>
-                <div className="experienceList--item__content">
-                  <h3>{item.name}</h3>
-                  <div className="experienceList--item__lineContainer">
-                    <div className="experienceList--item__lineContainer--line"></div>
-                    <h5>{item.role}</h5>
-                  </div>
-                  <p>{item.description}</p>
-                </div>
-              </FadeInWhenVisibleElement>
-            </FadeInWhenVisibleContainer>
-          );
-        })}
+                <p>{item.description}</p>
+              </div>
+            </FadeInWhenVisibleElement>
+          </FadeInWhenVisibleContainer>
+        );
+      })}
     </div>
   );
 }
