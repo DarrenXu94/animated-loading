@@ -27,6 +27,7 @@
   opacity: 1;
   transition: all 0.4s;
   text-decoration: none;
+  padding-top: 3px;
 }
 
 .floatingButton .fa {
@@ -47,7 +48,7 @@
 }
 
 .floatingButton.open .fa {
-  transform: rotate(270deg);
+  transform: rotate(120deg);
 }
 
 .floatingMenu {

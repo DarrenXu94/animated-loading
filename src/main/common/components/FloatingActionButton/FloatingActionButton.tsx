@@ -19,8 +19,8 @@ export default function FloatingActionButton({}: FloatingActionButtonProps) {
           setisOpen(!isOpen);
         }}
       >
-        <a href="#" className="floatingButton">
-          +
+        <a href="#" className={`floatingButton ${isOpen && "open"}`}>
+          <i className="fa fa-plus icon-default"></i>
         </a>
         <AnimatePresence>
           {isOpen && (
