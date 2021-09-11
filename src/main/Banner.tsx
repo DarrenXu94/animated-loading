@@ -40,7 +40,15 @@ export default function Banner({}: BannerProps) {
   }, []);
 
   return (
-    <div className="banner">
+    <>
+      <div className="banner">
+        <div className="circle">
+          <div className="logo"></div>
+          <div className="text">
+            <p>Software Developer - Darren Xu -</p>
+          </div>
+        </div>
+      </div>
       <motion.div
         className="banner-vertical-menu"
         initial="hidden"
@@ -57,12 +65,6 @@ export default function Banner({}: BannerProps) {
           <a href="#projects">Projects</a>
         </motion.div>
       </motion.div>
-      <div className="circle">
-        <div className="logo"></div>
-        <div className="text">
-          <p>Software Developer - Darren Xu -</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
