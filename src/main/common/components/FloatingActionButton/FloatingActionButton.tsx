@@ -26,7 +26,7 @@ export default function FloatingActionButton({}: FloatingActionButtonProps) {
           {isOpen && (
             <motion.ul
               transition={{
-                staggerChildren: 0.35,
+                staggerChildren: 0.25,
 
                 staggerDirection: -1,
               }}
@@ -36,7 +36,14 @@ export default function FloatingActionButton({}: FloatingActionButtonProps) {
               className="floatingMenu"
             >
               <motion.li key="home" variants={item}>
-                <a href="#">Home</a>
+                <a
+                  href="#navbar"
+                  onClick={() => {
+                    scrollTo("navbar");
+                  }}
+                >
+                  Home
+                </a>
               </motion.li>
 
               <motion.li key="experience" variants={item}>

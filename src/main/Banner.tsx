@@ -56,7 +56,7 @@ export default function Banner({}: BannerProps) {
         variants={container}
       >
         <motion.div variants={itemMain} className="banner-menu-item">
-          Home
+          <a href="#navbar">Home</a>
         </motion.div>
         <motion.div variants={itemMain} className="banner-menu-item">
           <a href="#experience">Experience</a>

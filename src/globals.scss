@@ -7,6 +7,11 @@
 @import "./scss/floatingActionButton.scss";
 @import "./scss//gridLayout.scss";
 
+#root,
+body {
+  background-color: antiquewhite;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

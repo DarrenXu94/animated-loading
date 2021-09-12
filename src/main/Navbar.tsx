@@ -15,7 +15,7 @@ export default function Navbar({}: NavbarProps) {
       }}
       className="header"
     >
-      <div className="header-inner">
+      <div className="header-inner" id="navbar">
         <div className="logo-text">Darren Xu</div>
         <nav className="nav">
           <li>
