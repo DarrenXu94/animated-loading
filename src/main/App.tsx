@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import Experience from "./Sections/Experience/Experience";
 import ExperienceList from "./Sections/Experience/ExperienceList";
 import Projects from "./Sections/Projects/Projects";
+import VerticalMenu from "./Sections/VerticalMenu/VerticalMenu";
 
 export interface AppProps {}
 
@@ -27,6 +28,7 @@ export default function App({}: AppProps) {
           <>
             <Navbar />
             <Banner />
+            <VerticalMenu />
             {!loading && (
               <>
                 <div className="transition-image final">
