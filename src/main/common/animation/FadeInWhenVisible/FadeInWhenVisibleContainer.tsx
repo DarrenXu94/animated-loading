@@ -14,19 +14,22 @@ export default function FadeInWhenVisibleContainer({
   const controls = useAnimation();
   const size: Size = useWindowSize();
 
-  const [ref, inView] = useInView(
-    size.width && size.width > 960
-      ? {
-          threshold: 0.5 || undefined,
-        }
-      : {
-          rootMargin: "-200px 0px",
-        }
-  );
+  // const [ref, inView] = useInView(
+  //   size.width && size.width > 960
+  //     ? {
+  //         threshold: 1 || undefined,
+  //       }
+  //     : {
+  //         rootMargin: "-200px 0px",
+  //       }
+  // );
+
+  const [ref, inView] = useInView({ rootMargin: "-200px 0px" });
 
   useEffect(() => {
     if (inView && size.width) {
       controls.start("visible");
+      console.log("visible");
     }
   }, [controls, inView, size]);
 

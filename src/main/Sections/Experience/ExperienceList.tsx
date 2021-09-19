@@ -43,7 +43,7 @@ export default function ExperienceList({}: ExperienceListProps) {
         }}
         className="experienceList__header"
       >
-        <div className="experienceList__line"></div>
+        <div className="experienceList__line-start"></div>
         <h2 className="content__h2" id="experience">
           Experience
         </h2>
