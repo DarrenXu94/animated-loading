@@ -18,7 +18,8 @@ export default function App({}: AppProps) {
   const [loading, setLoading] = useState(true);
 
   return (
-    <AnimateSharedLayout type="crossfade">
+    // <AnimateSharedLayout type="crossfade">
+    <>
       <AnimatePresence>
         {loading ? (
           <motion.div key="loader">
@@ -31,17 +32,17 @@ export default function App({}: AppProps) {
             <VerticalMenu />
             {!loading && (
               <>
-                <div className="transition-image final">
-                  <Experience />
-                  <motion.img
+                {/* <div className="transition-image final"> */}
+                {/* <Experience /> */}
+                {/* <motion.img
                     transition={{
                       ease: [0.6, 0.01, -0.05, 0.9],
                       duration: 1.6,
                     }}
                     src={bannerImg}
                     layoutId="main-image-1"
-                  />
-                </div>
+                  /> */}
+                {/* </div> */}
                 <ExperienceList />
                 <Projects />
               </>
@@ -50,6 +51,7 @@ export default function App({}: AppProps) {
         )}
       </AnimatePresence>
       <FloatingActionButton />
-    </AnimateSharedLayout>
+    </>
+    // </AnimateSharedLayout>
   );
 }

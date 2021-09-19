@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import FadeInWhenVisibleContainer from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisibleContainer";
 import FadeInWhenVisibleElement from "~/main/common/animation/FadeInWhenVisible/FadeInWhenVisibleElement";
@@ -32,6 +33,22 @@ const experienceListItems = [
 export default function ExperienceList({}: ExperienceListProps) {
   return (
     <div className="experienceList">
+      <motion.div
+        initial={{ opacity: 0, y: 180 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 1,
+          delay: 0.1,
+        }}
+        className="experienceList__header"
+      >
+        <div className="experienceList__line"></div>
+        <h2 className="content__h2" id="experience">
+          Experience
+        </h2>
+        <div className="experienceList__line"></div>
+      </motion.div>
       {experienceListItems.map((item, idx) => {
         return (
           <FadeInWhenVisibleContainer

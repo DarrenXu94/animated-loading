@@ -16,6 +16,14 @@ const itemMain = {
       duration: 1.6,
     },
   },
+  exit: {
+    opacity: 0,
+    y: -200,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
 };
 
 const container = {
@@ -48,22 +56,22 @@ const item = {
 
 export default function Loading({ setLoading, bannerImg }: LoadingProps) {
   return (
-    <motion.div className="loader">
-      <motion.div
-        variants={container}
-        onAnimationComplete={() => setLoading(false)}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        className="loader-inner"
-      >
-        <motion.div variants={itemMain} className="transition-image">
-          <motion.img layoutId="main-image-1" src={bannerImg} />
-          <motion.div variants={item} className="welcomeBlock">
-            <h1>Welcome</h1>
-          </motion.div>
+    // <motion.div className="loader">
+    <motion.div
+      variants={container}
+      onAnimationComplete={() => setLoading(false)}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      className="loader-inner"
+    >
+      <motion.div variants={itemMain} className="transition-image">
+        <motion.img layoutId="main-image-1" src={bannerImg} />
+        <motion.div variants={item} className="welcomeBlock">
+          <h1>Welcome</h1>
         </motion.div>
       </motion.div>
     </motion.div>
+    // </motion.div>
   );
 }
